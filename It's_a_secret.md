@@ -24,11 +24,11 @@ This confirmed that `its-a-secret-policy` was attached.
     "AttachedPolicies": [
         {
             "PolicyName": "its-a-secret-policy",
-            "PolicyArn": "arn:aws:iam::872515286397:policy/its-a-secret-policy"
+            "PolicyArn": "arn:aws:iam::872456786397:policy/its-a-secret-policy"
         },
         {
             "PolicyName": "CloudFox-policy-perms",
-            "PolicyArn": "arn:aws:iam::872515286397:policy/CloudFox-policy-perms"
+            "PolicyArn": "arn:aws:iam::872456786397:policy/CloudFox-policy-perms"
         },
         {
             "PolicyName": "SecurityAudit",
@@ -42,7 +42,7 @@ This confirmed that `its-a-secret-policy` was attached.
 To check the actual permissions granted by `its-a-secret-policy`, I retrieved its policy document:
 
 ```bash
-aws --profile cloudfoxable iam get-policy-version --policy-arn arn:aws:iam::872515286397:policy/its-a-secret-policy --version-id v1
+aws --profile cloudfoxable iam get-policy-version --policy-arn arn:aws:iam::872456786397:policy/its-a-secret-policy --version-id v1
 ```
 
 #### Policy Excerpt:
@@ -57,7 +57,7 @@ aws --profile cloudfoxable iam get-policy-version --policy-arn arn:aws:iam::8725
                     ],
                     "Effect": "Allow",
                     "Resource": [
-                        "arn:aws:ssm:us-west-2:872515286397:parameter/cloudfoxable/flag/its-a-secret"
+                        "arn:aws:ssm:us-west-2:872456786397:parameter/cloudfoxable/flag/its-a-secret"
                     ]
                 }
             ],
@@ -89,7 +89,7 @@ aws --profile cloudfoxable ssm get-parameter --name "/cloudfoxable/flag/its-a-se
         "Value": "FLAG{ItsASecret::IsASecretASecretIfTooManyPeopleHaveAccessToIt?}",
         "Version": 1,
         "LastModifiedDate": "2025-02-12T10:37:13.899000-05:00",
-        "ARN": "arn:aws:ssm:us-west-2:872515286397:parameter/cloudfoxable/flag/its-a-secret",
+        "ARN": "arn:aws:ssm:us-west-2:872456786397:parameter/cloudfoxable/flag/its-a-secret",
         "DataType": "text"
     }
 }
